@@ -22,6 +22,7 @@
 <script>
 import axios from 'axios'
 import Error from './Error.vue'
+// 
 export default {
     name: 'Forgot',
     components: {

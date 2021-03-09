@@ -18,4 +18,4 @@ export default new Router({
         {path: '/forgot', component: Forgot},
         {path: '/reset/:token', component: Reset},
     ]
-})
+});
