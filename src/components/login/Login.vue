@@ -1,7 +1,7 @@
 <template>
     <form action="" >
         <!-- @submit.prevent="handleSubmit" -->
-        <Error v-if="error" :error="error" />
+        <!-- <Error v-if="error" :error="error" /> -->
 
         <h3>Login</h3>
 
@@ -15,9 +15,8 @@
             <input type="password" class="form-control" v-model="password" name="password" id="" placeholder="password"/>
         </div>
 
-        <!-- <button class="btn btn-primary btn-block">Login</button> -->
-        <router-link to="/postlist">Login</router-link>
-
+        <router-link to="/postlist"><button class="btn btn-primary btn-block">Login</button></router-link>
+        
         <p class="forgot-password text-right">
             <router-link to="/forgot">Forgot password?</router-link>
         </p>
@@ -25,13 +24,13 @@
 </template>
 
 <script>
-import axios from 'axios'
-import Error from './Error.vue'
-// 
+// import axios from 'axios'
+// import Error from './Error.vue'
+ 
 export default {
     name: 'Login',
     components: {
-        Error,
+        // Error,
     },
     data(){
         return{
@@ -40,21 +39,21 @@ export default {
             error: '',
         }
     },
-    methods: {
-        async handleSubmit() {
-            try {
-                const response = await axios.post('login', {
-                    email: this.email,
-                    password: this.password,
-                });
-                // console.log(response);
-                localStorage.setItem('token', response.data.token);
-                this.$store.dispatch('loginuser', response.data.loginuser);
-                this.$router.push('/');
-            }catch (e) {
-                this.error = 'Invalid email or password'
-            }        
-        }
-    }
+    // methods: {
+    //     async handleSubmit() {
+    //         try {
+    //             const response = await axios.post('login', {
+    //                 email: this.email,
+    //                 password: this.password,
+    //             });
+    //             // console.log(response);
+    //             localStorage.setItem('token', response.data.token);
+    //             this.$store.dispatch('loginuser', response.data.loginuser);
+    //             this.$router.push('/');
+    //         }catch (e) {
+    //             this.error = 'Invalid email or password'
+    //         }        
+    //     }
+    // }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
     <!-- create-post -->
         <div class="container">
-            <form action="{{ url('/importpost') }}" method="GET" id="form1">
+            <form id="form1">
                 <div class="row first">
                     <h3>Create Post</h3>
                 </div>
@@ -10,7 +10,7 @@
                         <label for="">Title</label>
                     </div>
                     <div class="col-md-10">
-                        <input class="input-title" type="text" name="title" id="" value="" placeholder="Enter Title">
+                        <input class="input-title" type="text" name="title" id="" value="">
                         <label for="title">*</label>
                     </div>
                 </div>
@@ -19,13 +19,16 @@
                         <label for="">Description</label>
                     </div>
                     <div class="col-md-10">
-                        <textarea name="description" id="" cols="30" rows="10" placeholder="Enter Description"></textarea>
+                        <input class="input-description" type="text" name="" id="">
                         <label for="description">*</label>
                     </div>
                 </div>
                 <div class="row fouth">
-                    <button type="submit" id="confirm-btn" class="confirm">Confirm</button>
-                    <button type="reset" id="clear-btn" class="clear">Clear</button>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-10">
+                        <button type="submit" id="confirm-btn" class="confirm">Confirm</button>
+                        <button type="reset" id="clear-btn" class="clear">Clear</button>
+                    </div>
                 </div>
             </form>
         </div>
@@ -46,16 +49,16 @@ export default {
     margin: 20px 0px 0px 0px;
 }
 .container form .fouth button {
-    margin: 0px 0px 0px 75px;
+    margin: 0px 35px 0px 0px;
     padding: 5px 5px 5px 5px;
-    width: 100px;
+    width: 80px;
     text-align: center;
 }
 .confirm, .create {
     background-color: #3b5998;
     color: white;
 }
-.input-title {
+.input-title, .input-description {
     width: 232px;
 }
 </style>

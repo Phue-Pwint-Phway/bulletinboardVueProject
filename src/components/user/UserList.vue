@@ -1,33 +1,8 @@
 <template>
-    <div class="container">
-        {{-- common-header  --}}
-        <div class="header-container">
-            <form action="">
-                <ul>
-                    <li>
-                        <h2>SCM Bulletin Board</h2>
-                    </li>
-                    <li>
-                        <a type="action" href="{{ ('/userlist') }}">Users</a>
-                    </li>
-                    <li>
-                        <a type="action" href="{{ ('/createuser') }}">User</a>
-                    </li>
-                    <li>
-                        <a type="action" href="{{ ('/postlist') }}">Posts</a>
-                    </li>
-                    <li>
-                        <label class="loginuser"  for="loginUser">Loginuser Name</label>
-                    </li>
-                    <li>
-                        <a href="">Logout</a>
-                    </li>
-                </ul>
-            </form>
-        </div>
-        {{-- user-list --}}
-        <div class="userlist-container">
-            <form action="">
+    <div id="user-list">
+        <CommonHeader /> 
+        <div class="container">
+            <form>
                 <div class="row first">
                     <h3>User List</h3>
                 </div>
@@ -49,7 +24,7 @@
                             <button>Search</button>
                         </li>
                         <li>
-                            <button type="button" onclick="location.href='{{ url('/createuser') }}'">Add</button>
+                            <button type="button">Add</button>
                         </li>
                     </ul>
                 </div>
@@ -75,17 +50,6 @@
                             <td></td>
                             <td>2/9/2019</td>
                             <td>1/10/2019</td>
-                            <td><button>Delete</button></td>
-                        </tr>
-                        <tr>
-                            <td><a href="">user2</a></td>
-                            <td>user2@gmail.com</td>
-                            <td>user1</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>11/1/2020</td>
-                            <td>23/3/2020</td>
                             <td><button>Delete</button></td>
                         </tr>
                     </table>
@@ -118,11 +82,68 @@
 </template>
 
 <script>
+import CommonHeader from './CommonHeader.vue'
+
 export default {
     name: 'UserList',
+    components: {
+        CommonHeader,
+    }
 }
 </script>
 
 <style scoped>
+/* for user-list */
+.container {
+    margin: 20px 0px 0px 0px;
+}
+.first, .second, .third {
+    margin: 0px 0px 0px 0px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: inline;
+}
+.second ul li input {
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 0px;
+    width: 100px;
+    text-align: center;
+}
+.second ul li button {
+    background-color: #3b5998;
+    color: white;
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 0px;
+    width: 100px;
+    text-align: center;
+}
+table, td, th {
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px 5px 5px 5px;
+}
+table {
+    border-collapse: collapse;
+}
+.third {
+    margin: 20px 0px 0px 0px;
+}
+.fouth {
+    margin: 20px 0px 0px 100px;
+}
+.fouth nav ul li {
+    margin: 0px 0px 0px 5px;
+}
+.fouth nav ul li a {
+    border: 1px solid black;
+    background-color: #3b5998;
+    color: white;
+    padding: 5px 10px 5px 10px;
+}
 
 </style>

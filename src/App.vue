@@ -18,7 +18,6 @@ export default {
   name: 'App',
   components: {
     Nav,
-    
   }, 
   data() {
       return {
@@ -37,7 +36,7 @@ export default {
 </script>
 
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Fira+Sans");
+   @import url("https://fonts.googleapis.com/css2?family=Fira+Sans");
 
   * {
     box-sizing: border-box;
@@ -46,7 +45,7 @@ export default {
   body {
     background: #1C8EF9 !important;
     min-height: 100vh;
-    display: flex;
+    display: grid;
     font-weight: 400;
     font-family: 'Fira Sans', sans-serif;
   }
@@ -71,6 +70,7 @@ export default {
   }
 
   .auth-wrapper {
+    padding-top: 50px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -78,7 +78,7 @@ export default {
   }
 
   .auth-inner {
-    width: 450px;
+    width: 90%;
     margin: auto;
     background: #ffffff;
     box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);

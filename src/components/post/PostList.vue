@@ -1,12 +1,13 @@
 <template>
     <!-- post-list -->
     <div id="post-list">
-        <div class="postlist-container">
-            <form action="">
-                <div class="row1">
+        <CommonHeader />
+        <div class="container">
+            <form>
+                <div class="row first">
                     <h3>Post List</h3>
                 </div>
-                <div class="row2">
+                <div class="row second">
                     <ul>
                         <li>
                             <input type="text" placeholder="search all">
@@ -15,18 +16,18 @@
                             <button>Search</button>
                         </li>
                         <li>
-                            <button type="button">Add</button>
+                            <router-link to="/createpost"><button type="submit">Add</button></router-link>
                         </li>
                         <li>
-                            <button type="button">Upload</button>
+                            <router-link to="/uploadCSV"><button type="submit">Upload</button></router-link>
                         </li>
                         <li>
-                            <button>Download</button>
+                            <router-link to="/"><button type="submit">Download</button></router-link>
                         </li>
                         <li></li>
                     </ul>
                 </div>
-                <div class="row3">
+                <div class="row third">
                     <table>
                         <tr>
                             <th>Post Title</th>
@@ -44,48 +45,9 @@
                             <td><button>Edit</button></td>
                             <td><button>Delete</button></td>
                         </tr>
-                        <tr>
-                            <td><a href="">Title2</a></td>
-                            <td>Description 2</td>
-                            <td>User 1</td>
-                            <td>5/4/2019</td>
-                            <td><button>Edit</button></td>
-                            <td><button>Delete</button></td>
-                        <tr>
-                            <td><a href="">Title 3</a></td>
-                            <td>Description 3</td>
-                            <td>User 1</td>
-                            <td>4/10/2019</td>
-                            <td><button>Edit</button></td>
-                            <td><button>Delete</button></td>
-                        </tr>
-                        <tr>
-                            <td><a href="">Title 4</a></td>
-                            <td>Description 4</td>
-                            <td>User 2</td>
-                            <td>5/11/2019</td>
-                            <td><button>Edit</button></td>
-                            <td><button>Delete</button></td>
-                        </tr>
-                        <tr>
-                            <td><a href="">Title 5</a></td>
-                            <td>Description 5</td>
-                            <td>User 2</td>
-                            <td>9/10/2019</td>
-                            <td><button>Edit</button></td>
-                            <td><button>Delete</button></td>
-                        </tr>
-                        <tr>
-                            <td><a href="">Title 6</a></td>
-                            <td>Description 6</td>
-                            <td>User 3</td>
-                            <td>11/12/2019</td>
-                            <td><button>Edit</button></td>
-                            <td><button>Delete</button></td>
-                        </tr>
                     </table>
                 </div>
-                <div class="row4">
+                <div class="row fouth">
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">
                           <li class="page-item">
@@ -113,8 +75,13 @@
 </template>
 
 <script>
+import CommonHeader from './CommonHeader.vue'
+
 export default {
-    
+    name: 'PostList',
+    components: {
+        CommonHeader,
+    }
 }
 </script>
 
@@ -125,19 +92,22 @@ ul {
     margin: 0;
     padding: 0;
 }
-.postlist-container {
+.container {
     margin: 20px 0px 0px 0px;
+}
+.first, .second, .third {
+    margin: 0px 0px 0px 0px;
 }
 li {
     display: inline;
 }
-.row2 ul li input {
+.second ul li input {
     padding: 5px 5px 5px 5px;
     margin: 5px 5px 5px 0px;
     width: 100px;
     text-align: center;
 }
-.row2 ul li button {
+.second ul li button {
     background-color: #3b5998;
     color: white;
     padding: 5px 5px 5px 5px;
@@ -153,20 +123,21 @@ table, td, th {
 table {
     border-collapse: collapse;
 }
-.row3 {
+.third {
     margin: 20px 0px 0px 0px;
 }
-.row4 {
+.fouth {
     margin: 20px 0px 0px 100px;
 }
-.row4 nav ul li {
+.fouth nav ul li {
     margin: 0px 0px 0px 5px;
 }
-.row4 nav ul li a {
+.fouth nav ul li a {
     border: 1px solid black;
     background-color: #3b5998;
     color: white;
     padding: 5px 10px 5px 10px;
 }
+
 
 </style>
