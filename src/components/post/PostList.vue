@@ -28,24 +28,7 @@
                     </ul>
                 </div>
                 <div class="row third">
-                    <table>
-                        <tr>
-                            <th>Post Title</th>
-                            <th>Post Description</th>
-                            <th>Posted Use</th>
-                            <th>Posted Date</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                        <tr>
-                            <td><a href="">Title 1</a></td>
-                            <td>Description 1</td>
-                            <td>User 1</td>
-                            <td>5/10/2019</td>
-                            <td><button>Edit</button></td>
-                            <td><button>Delete</button></td>
-                        </tr>
-                    </table>
+                    <ListItem />
                 </div>
                 <div class="row fouth">
                     <nav aria-label="Page navigation example">
@@ -75,12 +58,11 @@
 </template>
 
 <script>
-import CommonHeader from './CommonHeader.vue'
-
+import ListItem from './ListItem.vue'
 export default {
     name: 'PostList',
     components: {
-        CommonHeader,
+        ListItem,
     }
 }
 </script>
@@ -115,17 +97,6 @@ li {
     width: 100px;
     text-align: center;
 }
-table, td, th {
-    border: 1px solid black;
-    text-align: center;
-    padding: 5px 5px 5px 5px;
-}
-table {
-    border-collapse: collapse;
-}
-.third {
-    margin: 20px 0px 0px 0px;
-}
 .fouth {
     margin: 20px 0px 0px 100px;
 }
@@ -138,6 +109,4 @@ table {
     color: white;
     padding: 5px 10px 5px 10px;
 }
-
-
 </style>

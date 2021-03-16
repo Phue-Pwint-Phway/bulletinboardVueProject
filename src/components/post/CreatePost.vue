@@ -10,7 +10,7 @@
                         <label for="">Title</label>
                     </div>
                     <div class="col-md-10">
-                        <input class="input-title" type="text" name="title" id="" value="">
+                        <input v-model="title" class="input-title" type="text">
                         <label for="title">*</label>
                     </div>
                 </div>
@@ -19,14 +19,14 @@
                         <label for="">Description</label>
                     </div>
                     <div class="col-md-10">
-                        <input class="input-description" type="text" name="" id="">
+                        <input v-model="description" class="input-description" type="text">
                         <label for="description">*</label>
                     </div>
                 </div>
                 <div class="row fouth">
                     <div class="col-md-2"></div>
                     <div class="col-md-10">
-                        <button type="submit" id="confirm-btn" class="confirm">Confirm</button>
+                        <button @click.prevent="addUser" type="submit" id="confirm-btn" class="confirm"><router-link to="/postlist" class="confirm">Confirm</router-link></button>
                         <button type="reset" id="clear-btn" class="clear">Clear</button>
                     </div>
                 </div>
@@ -35,8 +35,24 @@
 </template>
 
 <script>
+
 export default {
-    
+  data() {
+    return {
+      title: "",
+      description: "",
+    };
+  },
+  methods: {
+    addUser() {
+      this.$store.dispatch("addUser", {
+        data: {
+          title: this.title,
+          description: this.description,
+        }
+      });
+    }
+  }
 }
 </script>
 

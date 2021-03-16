@@ -4,6 +4,7 @@
     <div class="auth-wrapper">
       <div class="auth-inner">
         <router-view />
+        <!-- <PostList /> -->
       </div>
     </div>
   </div>
@@ -12,12 +13,14 @@
 
 <script>
 import Nav from './components/Nav.vue'
+// import PostList from './components/post/PostList.vue'
 import axios from 'axios'
 
 export default {
   name: 'App',
   components: {
     Nav,
+    // PostList,
   }, 
   data() {
       return {

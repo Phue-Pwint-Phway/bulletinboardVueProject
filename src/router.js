@@ -23,11 +23,12 @@ export default new Router({
         {path: '/register', component: Register},
         {path: '/forgot', component: Forgot},
         {path: '/reset/:token', component: Reset},
-        {path: '/postlist', component: PostList},
+
+        {path: '/postlist', component: PostList}, // postlist
         {path: '/createpost', component: CreatePost},
         {path: '/uploadCSV', component: UploadCSV},
 
-        {path: '/userlist', component: UserList},
+        {path: '/userlist', component: UserList}, // userlist
         {path: '/createuser', component: CreateUser},
     ]
-})
+});

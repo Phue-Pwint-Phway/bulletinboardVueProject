@@ -8,7 +8,7 @@ const state = {
     loginuser: null
 };
 
-const store = new Vuex.Store({
+const loginstore = new Vuex.Store({
     state,
     getters: {
         loginuser: (state) => {
@@ -27,4 +27,4 @@ const store = new Vuex.Store({
     },
 });
 
-export default store;
+export default loginstore;
